@@ -1,0 +1,26 @@
+
+#container{
+    width: 200px;
+    height: 200px;
+    border: 5px solid black;
+}
+.insider{
+    width: 100px;
+    height: 100px;
+}
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+    position: relative;
+    left: 50%;
+    bottom: 0%;
+}
+.green{
+    background-color: green;
+    position: relative;
+    left: 25%;
+    bottom: 75%;
+    z-index: 1;
+}

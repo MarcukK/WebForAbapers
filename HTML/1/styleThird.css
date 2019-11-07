@@ -1,0 +1,43 @@
+header {
+    height: 15%;
+    position: relative;
+    top: 0px;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 1%;
+    border-radius: 0px 0px 10px 10px;
+    background-color: rgb(154, 163, 154);   text-align: center;
+}
+
+#menu {
+    height: 600px;
+    width: 10%;
+    position: fixed;
+    top: 20%;
+    bottom: 20%;
+    left: 0;
+    padding: 1%;
+    background-color: rgba(154, 163, 154, 0.5);
+}
+
+#menu a {
+    text-decoration: none;
+}
+
+#central_block{
+    position: relative;
+    left: 10%;
+}
+
+footer{
+    height: 15%;
+    width: 90%;
+    position: absolute;
+    bottom: 0%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 1%;
+    border-radius: 10px 10px 0px 0px;
+    background-color: rgb(154, 163, 154);
+    text-align: center;
+}

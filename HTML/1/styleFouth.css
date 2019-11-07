@@ -1,0 +1,72 @@
+html, body{
+    height: 100%;
+}
+
+div{
+    margin: 1%;
+}
+
+.top{
+    height: 10%;
+}
+.top.left{
+    background: red;
+    float: left;
+    width: 38%;    
+}
+.top.right{
+    background: orange;
+    float: left;
+    width: 58%;
+}
+
+.central{
+    background: green;
+    float: left;
+    height: 55%;
+    width: 98%;
+}
+
+.bot{
+    height: 20%;
+}
+.bot.left{
+    background: brown;
+    float: left;
+    width: 31%;
+}
+.bot.central{
+    background: blue;
+    float: left;
+    width: 32%;
+}
+.bot.right{
+    background: violet;
+    float: left;
+    width: 31%;
+}
+
+@media screen and (max-width: 767px){
+    .top.left,
+    .top.right,
+    .central,
+    .bot.left,
+    .bot.central,
+    .bot.right
+    {
+        width: 98%;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1366px){
+    .bot.left {
+        width: 48%;
+    }
+    .bot.central    {
+        width: 48%;
+    }
+    .bot.right    {
+        width: 98%;
+    }
+
+}

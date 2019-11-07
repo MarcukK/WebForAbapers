@@ -1,0 +1,44 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+div {
+    position: relative;
+    border: 1px solid grey;
+    float: left;
+    height: 50%;
+    width: 19%;
+}
+
+img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+  }
+
+.small_image .big_image{
+    height: 48%;
+    width: 19%;
+}
+
+@media screen and (max-width: 1280px){
+    .small_image{
+        width: 24%;
+    }
+    .big_image{
+        width: 48%;
+    }
+}
+
+@media screen and (max-height: 1080){
+    .small_image{
+        width: 24%;
+    }
+    .big_image{
+        width: 48%;
+    }
+}
