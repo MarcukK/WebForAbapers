@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="Menu">
+            <button id="PageCreate" class="tablink">Create</button>
+            <button id="PageRead" class="tablink">Read</button>
+            <button id="PageUpdate" class="tablink">Update</button>
+            <button id="PageDelete" class="tablink">Delete</button>
+
+            <div id="Create" class="tabcontent">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <form>
+
+                            <input required type="radio" name="worker_type" value="factory_worker"> Factory worker<br>
+                            <input required type="radio" name="worker_type" value="airWorker"> Air worker<br>
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="workerFirstName">First name</label>
+                                    <input required id="workerFirstName" class="form-control" />
+                                </div>
+
+                                <div class="col-6">
+                                    <label for="workerLastName">Last name</label>
+                                    <input required id="workerLastName" class="form-control" />
+                                </div>
+                            </div>
+
+                            <label for="workerPhoneNumber">Phone number (with code; no spaces)</label>
+                            <input required id="workerPhoneNumber" type="tel" class="form-control" pattern="[0-9]{9}" />
+
+                            <label for="workerAge">Age</label>
+                            <input required id="workerAge" type="number" class="form-control" />
+
+                            <label for="workerSpecialty">Specialty</label>
+                            <input required id="workerSpecialty" class="form-control" />
+
+                            <label for="workerExperience">Working experience (in years)</label>
+                            <input required id="workerExperience" class="form-control" />
+
+                            <label for="workerSalary">Salary size</label>
+                            <input required id="workerSalary" type="number" class="form-control" />
+
+                            <label for="workerGender">Gender</label>
+                            <br>
+                            <input required type="radio" name="gender" value="male"> Male<br>
+                            <input required type="radio" name="gender" value="female"> Female<br>
+                            <input required type="radio" name="gender" value="other"> Other <br>
+
+                            <label for="workerCompany">Company</label>
+                            <input required id="workerCompany" class="form-control" />
+
+                            <label for="workerDepartment">Department</label>
+                            <input required id="workerDepartment" class="form-control" />
+
+                            <label for="workerPosition">Position</label>
+                            <input required id="workerPosition" class="form-control" />
+
+                            <label for="workerDateOfEmployment">Date of Employment</label>
+                            <input required id="workerYearOfEmployment" type="date" class="form-control" />
+
+                            <label for="workerDateOfDismissal">Date of Dismissal</label>
+                            <input required id="workerYearOfDismissal" type="date" class="form-control" />
+
+                            <br>
+                            <input id="ButtonSubmitCreate" type="submit" class="btn btn-success" value="Submit" />
+                            <input id="ButtonClearCreate" type="reset" class="btn btn-info design_for_button"
+                                value="Clear information" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="Read" class="tabcontent">
+                <div class="row justify-content-center">
+                    <div class="col">
+
+                        <table id="ReadTable" class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NAME</th>
+                                    <th>AGE</th>
+                                    <th>SPEC</th>
+                                    <th>SAL</th>
+                                    <th>GEND</th>
+                                    <th>COMPANY</th>
+                                    <th>POS</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <th>1</th>
+                                    <th>Konstantin Marchuk</th>
+                                    <th>19</th>
+                                    <th>Software engineer</th>
+                                    <th>2500</th>
+                                    <th>M</th>
+                                    <th>LeverX</th>
+                                    <th>Software developer</th>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="Update" class="tabcontent">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <form>
+
+                            <input type="radio" name="worker_type" value="factory_worker"> Factory worker<br>
+                            <input type="radio" name="worker_type" value="airWorker"> Air worker<br>
+
+                            <label for="workerId">Identification number of worker</label>
+                            <input required id="workerId" type="number" class="form-control" />
+
+                            <div class="row">
+                                <div class="col-6">
+                                    <label for="workerFirstName">First name</label>
+                                    <input id="workerFirstName" class="form-control" />
+                                </div>
+
+                                <div class="col-6">
+                                    <label for="workerLastName">Last name</label>
+                                    <input id="workerLastName" class="form-control" />
+                                </div>
+                            </div>
+
+                            <label for="workerPhoneNumber">Phone number (with code; no spaces)</label>
+                            <input id="workerPhoneNumber" type="tel" class="form-control" pattern="[0-9]{9}" />
+
+                            <label for="workerAge">Age</label>
+                            <input id="workerAge" type="number" class="form-control" />
+
+                            <label for="workerSpecialty">Specialty</label>
+                            <input id="workerSpecialty" class="form-control" />
+
+                            <label for="workerExperience">Working experience (in years)</label>
+                            <input id="workerExperience" class="form-control" />
+
+                            <label for="workerSalary">Salary size</label>
+                            <input id="workerSalary" type="number" class="form-control" />
+
+                            <label for="workerGender">Gender</label>
+                            <br>
+                            <input type="radio" name="gender" value="male"> Male<br>
+                            <input type="radio" name="gender" value="female"> Female<br>
+                            <input type="radio" name="gender" value="other"> Other <br>
+
+                            <label for="workerCompany">Company</label>
+                            <input id="workerCompany" class="form-control" />
+
+                            <label for="workerDepartment">Department</label>
+                            <input id="workerDepartment" class="form-control" />
+
+                            <label for="workerPosition">Position</label>
+                            <input id="workerPosition" class="form-control" />
+
+                            <label for="workerDateOfEmployment">Date of Employment</label>
+                            <input id="workerYearOfEmployment" type="date" class="form-control" />
+
+                            <label for="workerDateOfDismissal">Date of Dismissal</label>
+                            <input id="workerYearOfDismissal" type="date" class="form-control" />
+
+                            <br>
+                            <input id="ButtonSubmitUpdate" type="submit" class="btn btn-success" value="Submit" />
+                            <input id="ButtonClearUpdate" type="reset" class="btn btn-info design_for_button"
+                                value="Clear information" />
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="Delete" class="tabcontent">
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <form>
+                            <label for="workerId">Identification number of worker</label>
+                            <input required id="workerId" type="number" class="form-control" />
+                            <br>
+                            <input id="ButtonSubmitDelete" type="submit" class="btn btn-success" value="Submit" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+
+</html>
