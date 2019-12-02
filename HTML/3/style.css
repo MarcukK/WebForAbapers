@@ -1,8 +1,14 @@
 body,
 html {
     height: 100%;
+    width: 100%;
     margin: 0;
     font-family: Arial;
+}
+
+#read{
+    height: 100%;
+    width: 100%;
 }
 
 .tablink {
@@ -39,3 +45,11 @@ html {
         opacity: 1;
     }
 }
+
+.group_inputs{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+

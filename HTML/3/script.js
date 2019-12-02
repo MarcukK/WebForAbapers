@@ -1,27 +1,52 @@
-const buttonToPageCreate = document.getElementById("PageCreate");
-const buttonToPageRead = document.getElementById("PageRead");
-const buttonToPageUpdate = document.getElementById("PageUpdate");
-const buttonToPageDelete = document.getElementById("PageDelete");
 
-buttonToPageCreate.addEventListener("click", openPageCreate);
-buttonToPageRead.addEventListener("click", openPageRead);
-buttonToPageUpdate.addEventListener("click", openPageUpdate);
-buttonToPageDelete.addEventListener("click", openPageDelete);
+document.getElementById("PageCreate").addEventListener("click", openPageCreate);
+document.getElementById("PageRead").addEventListener("click", openPageRead);
+document.getElementById("PageUpdate").addEventListener("click", openPageUpdate);
+document.getElementById("PageDelete").addEventListener("click", openPageDelete);
 
 function openPageCreate() {
-  openPage('Create');
+  var data = JSON.stringify({
+    "firstname": String(document.getElementsByName("workerRadios").value),
+    "lastname": String(document.getElementById("cthreadNumber").value),
+    "specialty": String(document.getElementById("cfrequency").value),
+    "experience": String(document.getElementById("cfrequency").value),
+    "salary": String(document.getElementById("cfrequency").value),
+    "gender": String(document.getElementById("cfrequency").value),
+    "company": String(document.getElementById("cfrequency").value),
+    "department": String(document.getElementById("cfrequency").value),
+    "position": String(document.getElementById("cfrequency").value)
+})
+
+if (document.getElementById('cworker_default').checked) {
+  rate_value = document.getElementById('cworker_default').value;
+}
+if (document.getElementById('cworker_factory').checked) {
+  rate_value = document.getElementById('cworker_factory').value;
+}
+if (document.getElementById('cworker_air').checked) {
+  rate_value = document.getElementById('cworker_air').value;
+}
+  console.log(data);
+  openPage("Create");
 }
 
 function openPageRead() {
-  openPage('Read');
+  xhrR = new XMLHttpRequest();
+  xhrR.withCredentials = true;
+  xhrR.open("GET", "http://localhost:2403/");
+  xhrR.setRequestHeader("Content-Type", "application/json");
+  xhrR.send();
+  openPage("Read");
 }
 
 function openPageUpdate() {
-  openPage('Update');
+  
+  openPage("Update");
 }
 
 function openPageDelete() {
-  openPage('Delete');
+  
+  openPage("Delete");
 }
 
 function openPage(pageName) {
@@ -36,10 +61,23 @@ function openPage(pageName) {
 }
 document.getElementById("PageCreate").click();
 
+function InsertIntoTable() {
+  var table = document.getElementById("ReadTable");
+  var row = table.insertRow(table.length);
+  for (let index = 0; index < 8; index++) {
+    var cell = row.insertCell(index);
+    cell.innerHTML = "2";
+  }
+  table.insertRow(table.length);
+}
+InsertIntoTable();
+
+
+
 
 function Working(
   id,
-  first_name,
+  firstname,
   last_name,
   age,
   specialty,
@@ -48,12 +86,10 @@ function Working(
   gender,
   company,
   department,
-  position,
-  date_of_employment,
-  date_of_dismissal
+  position
 ) {
   this.id = id;
-  this.first_name = first_name;
+  this.firstname = firstname;
   this.last_name = last_name;
   this.age = age;
   this.specialty = specialty;
@@ -63,14 +99,12 @@ function Working(
   this.company = company;
   this.department = department;
   this.position = position;
-  this.date_of_employment = date_of_employment;
-  this.date_of_dismissal = date_of_dismissal;
 
   this.getId = function() {
     return this.id;
   };
   this.getFirstName = function() {
-    return this.first_name;
+    return this.firstname;
   };
   this.getLastName = function() {
     return this.last_name;
@@ -99,17 +133,11 @@ function Working(
   this.getPosition = function() {
     return this.position;
   };
-  this.getDateOfEmployment = function() {
-    return this.date_of_employment;
-  };
-  this.getDateOfDismissal = function() {
-    return this.date_of_dismissal;
-  };
 }
 
 function FactoryWorker(
   id,
-  first_name,
+  firstname,
   last_name,
   age,
   specialty,
@@ -119,28 +147,11 @@ function FactoryWorker(
   company,
   department,
   position,
-  date_of_employment,
-  date_of_dismissal,
   factory_id,
   factory_name,
   factory_city
 ) {
-  Working.call(
-    this,
-    id,
-    first_name,
-    last_name,
-    age,
-    specialty,
-    experience,
-    salary,
-    gender,
-    company,
-    department,
-    position,
-    date_of_employment,
-    date_of_dismissal
-  );
+  Working.apply(this, [].slice.call(arguments,0,7));
   this.factory_id = factory_id;
   this.factory_name = factory_name;
   this.factory_city = factory_city;
@@ -155,10 +166,12 @@ function FactoryWorker(
     return this.factory_city;
   };
 }
+FactoryWorker.prototype = Object.create(Working.prototype);
+FactoryWorker.prototype.constructor = FactoryWorker;
 
 function AirportWorker(
   id,
-  first_name,
+  firstname,
   last_name,
   age,
   specialty,
@@ -168,28 +181,11 @@ function AirportWorker(
   company,
   department,
   position,
-  date_of_employment,
-  date_of_dismissal,
   airport_id,
   airport_name,
   airport_city
 ) {
-  Working.call(
-    this,
-    id,
-    first_name,
-    last_name,
-    age,
-    specialty,
-    experience,
-    salary,
-    gender,
-    company,
-    department,
-    position,
-    date_of_employment,
-    date_of_dismissal
-  );
+  Working.apply(this, [].slice.call(arguments,0,7));
   this.airport_id = airport_id;
   this.airport_name = airport_name;
   this.airport_city = airport_city;
@@ -204,4 +200,7 @@ function AirportWorker(
     return this.airport_city;
   };
 }
+AirportWorker.prototype = Object.create(Working.prototype);
+AirportWorker.prototype.constructor = AirportWorker;
+
 
