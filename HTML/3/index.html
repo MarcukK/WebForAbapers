@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -23,7 +23,7 @@
             <div id="Create" class="tabcontent">
                 <div class="row justify-content-center">
                     <div class="col">
-                        <form>
+                        <form id="createForm">
 
                             <div class="row group_inputs">
 
@@ -39,8 +39,7 @@
                                     <div class="custom-control custom-radio">
                                         <input type="radio" class="custom-control-input" id="cworker_factory"
                                             name="workerRadios">
-                                        <label class="custom-control-label" for="cworker_factory">FACTORY
-                                            worker</label>
+                                        <label class="custom-control-label" for="cworker_factory">Factory worker</label>
                                     </div>
                                 </div>
 
@@ -135,9 +134,8 @@
             <div id="Read" class="tabcontent">
                 <div class="row justify-content-center">
                     <div class="col">
-
                         <table id="ReadTable" class="table">
-                            <thead>
+                            <thead id="workersTableHead">
                                 <tr>
                                     <th>ID</th>
                                     <th>NAME</th>
@@ -150,22 +148,13 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Konstantin Marchuk</td>
-                                    <td>19</td>
-                                    <td>Software engineer</td>
-                                    <td>2500</td>
-                                    <td>M</td>
-                                    <td>LeverX</td>
-                                    <td>Software developer</td>
-                                </tr>
+                            <tbody id="workersTableBody">
+
                             </tbody>
                         </table>
 
                         <table id="ReadTableFACTORY" class="table">
-                            <thead>
+                            <thead id="workersFactoryTableHead">
                                 <tr>
                                     <th>ID</th>
                                     <th>NAME</th>
@@ -181,22 +170,13 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Konstantin Marchuk</td>
-                                    <td>19</td>
-                                    <td>Software engineer</td>
-                                    <td>2500</td>
-                                    <td>M</td>
-                                    <td>LeverX</td>
-                                    <td>Software developer</td>
-                                </tr>
+                            <tbody id="workersFactoryTableBody">
+
                             </tbody>
                         </table>
 
                         <table id="ReadTableAirport" class="table">
-                            <thead>
+                            <thead id="workersAirportTableHead">
                                 <tr>
                                     <th>ID</th>
                                     <th>NAME</th>
@@ -212,17 +192,8 @@
                                 </tr>
                             </thead>
 
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>Konstantin Marchuk</td>
-                                    <td>19</td>
-                                    <td>Software engineer</td>
-                                    <td>2500</td>
-                                    <td>M</td>
-                                    <td>LeverX</td>
-                                    <td>Software developer</td>
-                                </tr>
+                            <tbody id="workersAirportTableBody">
+
                             </tbody>
                         </table>
 
@@ -347,8 +318,8 @@
                 <div class="row justify-content-center">
                     <div class="col">
                         <form>
-                            <label for="workerId">Identification number of worker</label>
-                            <input required id="workerId" type="number" class="form-control" />
+                            <label for="dworkerId">Identification number of worker</label>
+                            <input required id="dworkerId" class="form-control" value="" />
                             <br>
                             <input id="ButtonSubmitDelete" type="submit" class="btn btn-success" value="Submit" />
                         </form>
